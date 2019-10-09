@@ -44,7 +44,7 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
                             if (newBreedLi.style.color != "red"){
                                 newBreedLi.style.color = "red"
                             }
-                            else if (newBreedLi.style.color === "red"){
+                            else{
                                 newBreedLi.style.color = "black"
                             }
                         })
