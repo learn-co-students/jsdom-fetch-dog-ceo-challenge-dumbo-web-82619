@@ -16,7 +16,7 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
     dropDown.addEventListener("change", (evt) => {
         evt.preventDefault()
 
-   let selection = evt.target.value
+        let selection = evt.target.value
 
         fetch('https://dog.ceo/api/breeds/list/all')
             .then(JSONify)
