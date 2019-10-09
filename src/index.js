@@ -1,7 +1,7 @@
 console.log('%c HI', 'color: firebrick')
 
 let dogPics = document.querySelector('#dog-image-container')
-// let breedListUL = document.querySelector("#dog-breeds")
+
 
 let docBody = document.body
 
@@ -12,7 +12,14 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
 
     ////////
     let dropDown = document.querySelector('#breed-dropdown')
-    
+
+    let remainingAlphabet = ["e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    for(i = 0; i < remainingAlphabet.length; i++){
+        let option = document.createElement('option')
+        option.innerText = `${remainingAlphabet[i]}`
+        option.value = `${remainingAlphabet[i]}`
+        dropDown.append(option)
+    }
     dropDown.addEventListener("change", (evt) => {
         evt.preventDefault()
 
@@ -21,6 +28,7 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
         fetch('https://dog.ceo/api/breeds/list/all')
             .then(JSONify)
             .then(dogBreeds => {
+
                 let ogList = document.querySelector("#dog-breeds")
                 dogPics.parentNode.removeChild(ogList)
                 let breedListUL = document.createElement("ul")
