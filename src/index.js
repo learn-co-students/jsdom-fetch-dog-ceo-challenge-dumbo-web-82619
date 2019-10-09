@@ -41,7 +41,12 @@ fetch("https://dog.ceo/api/breeds/image/random/4")
                         newBreedLi.innerText = `${Object.keys(dogBreeds.message)[i]}`
                         breedListUL.append(newBreedLi)
                         newBreedLi.addEventListener("click", (evt) => {
-                            newBreedLi.style.color = "red"
+                            if (newBreedLi.style.color != "red"){
+                                newBreedLi.style.color = "red"
+                            }
+                            else if (newBreedLi.style.color === "red"){
+                                newBreedLi.style.color = "black"
+                            }
                         })
                     }
                 }
