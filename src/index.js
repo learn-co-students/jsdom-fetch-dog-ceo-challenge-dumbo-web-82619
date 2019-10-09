@@ -95,3 +95,65 @@ function addBreedSelectListener() {
 function selectBreedsStartingWith(letter) {
     updateBreedList(breeds.filter(breed => breed.startsWith(letter)));
 }
+
+
+// // OLD WAY (wrong?): 
+// document.addEventListener("DOMContentLoaded", function(){
+
+//     // define the HTML container where we want to add the dog images
+//     const dogImageContainer = document.querySelector("#dog-image-container")
+//     const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
+//     const breedUrl = 'https://dog.ceo/api/breeds/list/all'
+//     const ulContainer = document.querySelector("#dog-breeds")
+//     const dropdown = document.querySelector("#breed-dropdown")
+
+//     // start fetching from a API address (defined above)
+//     fetch(imgUrl)
+//     // get the box without the key
+//     .then(res => res.json())
+//     // get the key to open the box which allows us to use the data stored in the json.message
+//     .then(json => {
+//         dogs = json.message
+//         // iterating through the dogs array
+//         dogs.forEach(function(dog){
+//             // create an image tag for each dog
+//             imgElement = document.createElement("img")
+//             // set the src and alt attributes of img tag to the dog url
+//             imgElement.src = dog
+//             imgElement.alt = "dog image"
+//             // append each img tag with the dog url to the HTML container
+//             dogImageContainer.append(imgElement)
+//         })
+//     })
+
+//     fetch(breedUrl)
+//     .then(res => res.json())
+//     .then(json => {
+//         // we are getting the keys from the breeds hash and assigning it to 'breeds'
+//         breeds = Object.keys(json.message)
+//         // iterating through the breeds array
+//         breeds.forEach(function(breed){
+//             // for each breed, create an li element 
+//             liElement = document.createElement("li")
+//             // add the breed name as inner text for its li element
+//             liElement.innerText = breed
+//             // add an event listener for the new li element where, when clicked, changes the color of the style to red
+
+//             // liElement.addEventListener("click", function(evt){
+//             //     evt.target.style.color = 'red'
+//             // })
+
+//             // OR second way below using arrow function
+//             liElement.addEventListener("click", evt => evt.target.style.color = 'red')
+//             // append the li element to the ul container
+//             ulContainer.append(liElement)
+//         })
+//     })
+
+//     dropdown.addEventListener("change", function(evt){
+//         const choices = document.querySelectorAll("#breed-dropdown")
+//         // debugger
+//         choices.addEventListener("change")
+//     })
+
+// })
